@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
     $(" .select").niceSelect()
-
+    $(".comments__items").mCustomScrollbar();
 
     $(".table__check input").click(function() {
         if ($(this).is(':checked')) {
