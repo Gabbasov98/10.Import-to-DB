@@ -469,15 +469,30 @@ main {
         color: #494A4A;
         margin-bottom: 17px;
         flex-grow: 1;
+        &-title {
+            &.table__head-title--active {
+                & svg {
+                    transform: rotate(180deg);
+                    & path {
+                        fill: #00498D;
+                    }
+                }
+            }
+        }
         & div {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             // flex-grow: 1;
-            & img {
-                width: 7.5px;
+            & svg {
                 margin-left: 3px;
+                &:hover {
+                    cursor: pointer;
+                    & path {
+                        fill: #00498D;
+                    }
+                }
             }
             &:nth-child(1) {
                 width: 4.6%;

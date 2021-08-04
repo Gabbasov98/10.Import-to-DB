@@ -28,7 +28,8 @@ $(document).ready(function() {
         }
 
     });
-    if (document.getElementById('myChart')) {
+
+    function doughnutDiagram() {
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -58,7 +59,9 @@ $(document).ready(function() {
                 cutout: 50
             }
         });
-    } else {
+    }
+
+    function doughnutDiagram2() {
         var ctx = document.getElementById('myChart2').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -89,51 +92,17 @@ $(document).ready(function() {
         });
     }
 
+    if (document.getElementById('myChart')) {
+        doughnutDiagram()
+    }
+    if (document.getElementById('myChart2')) {
+        doughnutDiagram2()
+    }
 
     function lineDiagram() {
-        // Chart.defaults.scale.display = false
-
-        // var speedCanvas = document.getElementById("myChart3");
-
-        // // Chart.defaults.global.defaultFontFamily = "Lato";
-        // // Chart.defaults.global.defaultFontSize = 18;
-
-        // var speedData = {
-        //     labels: ["Янв", "10s", "20s", "30s", "40s", "50s", "60s"],
-        //     datasets: [{
-        //         label: "Статистика просмотров",
-        //         // label: false,
-        //         data: [0, 59, 75, 20, 20, 55, 40],
-        //         lineTension: 1,
-        //         fill: true,
-        //         backgroundColor: 'rgba(55, 81, 255, 0.1)', // Цвет фона
-        //         borderColor: 'rgba(0, 73, 141, 1)', // Цвет границы
-        //         borderWidth: 2,
-        //     }]
-        // };
-
-        // var chartOptions = {
-        //     legend: {
-        //         display: false,
-        //         // position: 'top left',
-        //         // labels: {
-        //         //     boxWidth: 0,
-        //         //     fontColor: 'yellow'
-        //         // },
-
-        //     }
-        // };
-
-        // var lineChart = new Chart(speedCanvas, {
-        //     type: 'line',
-        //     data: speedData,
-        //     options: chartOptions
-        // });
-        // var ctx = document.getElementById('myChart2').getContext('2d');
         Chart.defaults.scale.beginAtZero = true;
         Chart.defaults.scale.ticks.maxRotation = 0;
         Chart.defaults.scale.ticks.backdropColor = 'rgba(159, 162, 180,1)'
-            // Chart.defaults.scale.ticks.padding = 10;
         Chart.defaults.font.size = 10;
         Chart.defaults.font.family = 'Proxima Nova';
         Chart.defaults.plugins.legend.display = false;
@@ -170,7 +139,12 @@ $(document).ready(function() {
         })
     }
 
-    lineDiagram()
+    if (document.getElementById('myChart3')) {
+        lineDiagram()
+    }
 
 
+    $(".table__head-title").click(function() {
+        $(this).toggleClass("table__head-title--active")
+    })
 })
